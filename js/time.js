@@ -19,6 +19,10 @@ Clock.prototype.setAlarm = function(alarmTime) {
   alarm = setTimeout(alarmExecute, alarmInterval);
 };
 
+Clock.prototype.setSnooze = function(snoozeTime) {
+  alarm = setTimeout(alarmExecute, snoozeTime);
+}
+
 alarmExecute = function() {
   $("#alarm-pic").show();
 };

@@ -16,4 +16,11 @@ $(document).ready(function(){
     timerClock.setAlarm(alarmTime);
   });
 
+  $("#snooze").submit(function() {
+    event.preventDefault();
+    var moreTime = $("#snooze-time").val();
+    var snoozeTime = moreTime * 1000;
+    $("#alarm-pic").hide();
+    timerClock.setSnooze(snoozeTime);
+  });
 });

@@ -20,6 +20,10 @@ Clock.prototype.setAlarm = function(alarmTime) {
   alarm = setTimeout(alarmExecute, alarmInterval);
 };
 
+Clock.prototype.setSnooze = function(snoozeTime) {
+  alarm = setTimeout(alarmExecute, snoozeTime);
+}
+
 alarmExecute = function() {
   $("#alarm-pic").show();
 };
@@ -45,6 +49,13 @@ $(document).ready(function(){
     timerClock.setAlarm(alarmTime);
   });
 
+  $("#snooze").submit(function() {
+    event.preventDefault();
+    var moreTime = $("#snooze-time").val();
+    var snoozeTime = moreTime * 1000;
+    $("#alarm-pic").hide();
+    timerClock.setSnooze(snoozeTime);
+  });
 });
 
 },{"./../js/time.js":1}]},{},[2]);
