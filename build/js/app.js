@@ -17,12 +17,11 @@ Clock.prototype.setAlarm = function(alarmTime) {
   var alarmInterval = alarmTime - nowMilliseconds;
   console.log("alarm time" + alarmTime);
   console.log("alarmInterval" + alarmInterval);
-  alarm = setInterval(alarmExecute, alarmInterval);
+  alarm = setTimeout(alarmExecute, alarmInterval);
 };
 
 alarmExecute = function() {
-  console.log("Alarm!");
-  clearInterval(alarm);
+  $("#alarm-pic").show();
 };
 
 exports.timeModule = Clock;
@@ -40,6 +39,7 @@ $(document).ready(function(){
   var timerClock = new Clock();
   $("#alarm-input").submit(function() {
     event.preventDefault();
+    $("#alarm-pic").hide();
     var alarmTime = $("#h-m-time").val();
     alarmTime = moment.duration(alarmTime)
     timerClock.setAlarm(alarmTime);

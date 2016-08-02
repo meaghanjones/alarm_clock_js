@@ -16,12 +16,11 @@ Clock.prototype.setAlarm = function(alarmTime) {
   var alarmInterval = alarmTime - nowMilliseconds;
   console.log("alarm time" + alarmTime);
   console.log("alarmInterval" + alarmInterval);
-  alarm = setInterval(alarmExecute, alarmInterval);
+  alarm = setTimeout(alarmExecute, alarmInterval);
 };
 
 alarmExecute = function() {
-  console.log("Alarm!");
-  clearInterval(alarm);
+  $("#alarm-pic").show();
 };
 
 exports.timeModule = Clock;

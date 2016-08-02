@@ -10,6 +10,7 @@ $(document).ready(function(){
   var timerClock = new Clock();
   $("#alarm-input").submit(function() {
     event.preventDefault();
+    $("#alarm-pic").hide();
     var alarmTime = $("#h-m-time").val();
     alarmTime = moment.duration(alarmTime)
     timerClock.setAlarm(alarmTime);
