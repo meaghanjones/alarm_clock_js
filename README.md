@@ -1,6 +1,6 @@
 # EPICODUS STUDENT PROJECT | Modern JS Apps
 
-#### Alarm Clock, July 28, 2016_
+#### _Alarm Clock, July 28, 2016_
 
 #### By _**Meaghan Jones and Joel Delight, Epicodus**_
 
